@@ -1,5 +1,6 @@
 import sys
 import pandas as pd
+from sqlalchemy import create_engine
 
 
 
@@ -61,8 +62,20 @@ def clean_data(df):
     return df_clean
     
 
-def save_data(df, database_filename):
-    pass  
+def save_data(df,database_filename, table_name='disaster_messages_clean'):
+    """Stores a Data Frame in a SQLite database
+    
+    Args:
+        df(obj): a pandas Data Frame
+        table_name(str): name of the table
+        database_filename(str): Name of the SQLite database file
+        
+    Returns:
+        Nothing
+    
+    """
+    engine = create_engine(f"sqlite:///{database_filename}")
+    df.to_sql(table_name, engine, index=False)
 
 
 def main():
