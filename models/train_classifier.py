@@ -86,10 +86,10 @@ def build_model():
     pipeline = Pipeline(pipeline_params)
     
     #define parameter for grid search
-    grid_search_params = {'vect__ngram_range': ((1, 1), (1, 2))}
-                          #'vect__max_df': (0.5, 0.75, 1.0),
-                          #'vect__max_features': (None, 5000, 10000),
-                          #'tfidf__use_idf': (True, False)}
+    grid_search_params = {'vect__ngram_range': ((1, 1), (1, 2))
+                          'vect__max_df': (0.5, 0.75, 1.0),
+                          'vect__max_features': (None, 5000, 10000),
+                          'tfidf__use_idf': (True, False)}
     
     gs_cv = GridSearchCV(pipeline, grid_search_params)
     
