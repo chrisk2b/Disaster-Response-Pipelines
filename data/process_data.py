@@ -79,6 +79,15 @@ def save_data(df,database_filename, table_name='disaster_messages_clean'):
 
 
 def main():
+    """ Main function which executes the entire data processing steps
+    
+    Args:
+        None
+        
+    Returns:
+        Nothing
+    
+    """
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]

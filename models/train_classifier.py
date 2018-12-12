@@ -129,6 +129,7 @@ def save_model(model, model_filepath):
         model_filepath(str): path to the location where the pickle file should be stored
         
     Returns:
+        Nothing
         
     """
     with open(model_filepath, 'wb') as f:
@@ -136,6 +137,15 @@ def save_model(model, model_filepath):
 
 
 def main():
+    """Main function which performs the training of the model and saves it to disk.
+    
+    Args:
+        None
+        
+    Returns:
+        Nothing
+    
+    """
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
